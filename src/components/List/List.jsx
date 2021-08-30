@@ -3,22 +3,23 @@ import { Typography, FormControl, InputLabel, CircularProgress, MenuItem, Grid, 
 import PlaceDetails from "../PlaceDetails/PlaceDetails"
 import useStyles from './style'
 
-function List() {
+function List({places}) {
     const classes = useStyles();
     const [type, setType] = useState('resturants')
     const [rating, setRating] = useState('')
+    // console.log(places)
 
-    const places = [
-        {name:"Summer Resort"},
-        {name:"Cool Bar"},
-        {name:"KFC"},
-        {name:"Summer Resort"},
-        {name:"Cool Bar"},
-        {name:"KFC"},
-        {name:"Summer Resort"},
-        {name:"Cool Bar"},
-        {name:"KFC"},
-    ]
+    // const places = [
+    //     {name:"Summer Resort"},
+    //     {name:"Cool Bar"},
+    //     {name:"KFC"},
+    //     {name:"Summer Resort"},
+    //     {name:"Cool Bar"},
+    //     {name:"KFC"},
+    //     {name:"Summer Resort"},
+    //     {name:"Cool Bar"},
+    //     {name:"KFC"},
+    // ]
 
     return (
         <div className={classes.container}>
