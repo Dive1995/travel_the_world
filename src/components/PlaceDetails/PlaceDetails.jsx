@@ -19,6 +19,11 @@ function PlaceDetails({place}) {
             <CardContent>
                 <Typography gutterBottom variant='h5'>{place.name}</Typography>
                 <Box display="flex" justifyContent="space-between">
+                    {/* <Typography variant="subtitle1">Rating</Typography> */}
+                    <Rating name="read-only"   value={Number(place.rating)} readOnly />
+                    <Typography variant="subtitle1" gutterBottom>out of {place.num_reviews} reviews</Typography>
+                </Box>
+                <Box display="flex" justifyContent="space-between">
                     <Typography variant="subtitle1">Price</Typography>
                     <Typography variant="subtitle1" gutterBottom>{place.price_level}</Typography>
                 </Box>

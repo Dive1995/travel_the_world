@@ -3,11 +3,12 @@ import { Typography, FormControl, InputLabel, CircularProgress, MenuItem, Grid, 
 import PlaceDetails from "../PlaceDetails/PlaceDetails"
 import useStyles from './style'
 
-function List({places}) {
+function List({places, childClicked}) {
     const classes = useStyles();
     const [type, setType] = useState('resturants')
     const [rating, setRating] = useState('')
     // console.log(places)
+    console.log({childClicked});
 
     // const places = [
     //     {name:"Summer Resort"},
