@@ -13,14 +13,14 @@ function App() {
 
 
   useEffect(() => {
-    console.log('func')
+    // console.log('func')
     navigator.geolocation.getCurrentPosition(({coords}) => {
       setCoordinates({lat:coords.latitude, lng:coords.longitude})
     })
   },[])
 
   useEffect(() => {
-    console.log(coordinates, bounds);
+    // console.log(coordinates, bounds);
     if(bounds){
       getPlacesData(bounds.sw, bounds.ne)
       .then(res => {
