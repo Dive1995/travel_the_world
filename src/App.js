@@ -37,24 +37,25 @@ function App() {
   useEffect(() => {
     setIsLoading(true)
     // console.log(coordinates, bounds);
-    if(bounds){
+    if(bounds.sw && bounds.ne){
       getPlacesData(type,bounds.sw, bounds.ne)
       .then(res => {
         // console.log(res)
-        setPlaces(res)
+        setPlaces(res?.filter(place => place.name && place.num_reviews > 0))
+        setFilteredPlaces([])
         setIsLoading(false)
       })
       .catch(err => console.log(err))
       
     }
-  },[type,coordinates, bounds])
+  },[type, bounds])
   
 // console.log(places)
 
   return (
     <div className="App">
       <CssBaseline/>
-      <Header/>
+      <Header setCoordinates={setCoordinates}/>
       <Grid container spacing={2}>
         <Grid item xs={12} md={4}>
           <List 
