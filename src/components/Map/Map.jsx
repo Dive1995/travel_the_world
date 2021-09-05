@@ -30,7 +30,7 @@ function Map({setBounds, setCoordinates, coordinates, places, setChildClicked}) 
             >
                 
                         
-            {places.length && places.map((place, i) => (
+            {places?.length && places.map((place, i) => (
                 <div
                     className={classes.markerContainer}
                     lat={Number(place.latitude)}
